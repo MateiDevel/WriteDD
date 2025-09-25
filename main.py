@@ -4,7 +4,7 @@ import sys
 
 app = QApplication(sys.argv)
 
-APP_WIDTH, APP_HEIGHT = 500, 700
+APP_WIDTH, APP_HEIGHT = 500, 600
 
 window = QWidget()
 window.setWindowTitle("WriteDD")
