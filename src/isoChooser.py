@@ -7,13 +7,13 @@ def isoBtn_clicked(pathBox):
         None,
         "Select ISO file",
         "",
-        "ISO (*.iso)"
+        "Images (*.iso *.img)"
     )
 
     ext = Path(file_path).suffix.lower()
-    if ext == ".iso":
+    if ext == ".iso" or ext == ".img":
         pathBox.setText(file_path)
-        print("[WRITEDD] ISO detected")
+        print("[WRITEDD] Image detected")
     else:
         pathBox.setText('')
         pathBox.setPlaceholderText("Not an ISO file")
