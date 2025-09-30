@@ -1,8 +1,8 @@
 from PyQt6.QtWidgets import QLabel, QPushButton, QLineEdit, QComboBox
 from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
 from src.isoChooser import isoBtn_clicked
 from src.searchDrives import searchDrives
+from src.writeIso import write
 
 font = QFont("DejaVu Sans", 30)
 
@@ -23,6 +23,14 @@ def createUI(window, APP_WIDTH, APP_HEIGHT):
     selectBtn = QPushButton("Select ISO", window)
     selectBtn.move(10, pathBox.y())
     selectBtn.clicked.connect(lambda : isoBtn_clicked(pathBox))
-    title.show()
 
+
+    writeBtn = QPushButton("Write", window)
+    writeBtn.move(10, pathBox.y() + 30)
+    writeBtn.clicked.connect(lambda : write(usbSelect, window))
+
+    def printOption():
+        print(usbSelect.currentText())
+
+    usbSelect.currentIndexChanged.connect(printOption)
     searchDrives(usbSelect)
