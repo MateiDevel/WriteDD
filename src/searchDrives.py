@@ -12,9 +12,9 @@ def searchDrives(usbSelect):
             deviceNode = device.device_node
             model = device.get('ID_MODEL', 'Unknown')
             output = f"{model} ({deviceNode})"
-            usbSelect.addItem(output, deviceNode)
+            usbSelect.addItem(deviceNode)
             print(f"[WRITEDD] {output}")
-
+                          
     def watch():
         for device in iter(monitor.poll, None):
             if 'ID_USB_DRIVER' not in device:
