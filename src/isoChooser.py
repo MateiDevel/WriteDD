@@ -2,6 +2,8 @@ from PyQt6.QtWidgets import QFileDialog, QFileIconProvider
 from PyQt6.QtCore import QFileInfo
 from pathlib import Path
 
+file_path = None
+
 def isoBtn_clicked(pathBox):
     file_path, _ = QFileDialog.getOpenFileName(
         None,
